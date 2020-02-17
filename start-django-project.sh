@@ -8,7 +8,6 @@ else
 fi
 
 # set up app name in config files
-sed -i "s/my_app/${APP_NAME}/g" Procfile 
 sed -i "s/my_app/${APP_NAME}/g" .env.example
 cp -i .env.example .env
 
@@ -27,3 +26,9 @@ touch ${APP_NAME}/settings/__init__.py
 mv ${APP_NAME}/settings.py ${APP_NAME}/settings/base.py
 mv settings.prod.py ${APP_NAME}/settings/prod.py
 mv settings.dev.py ${APP_NAME}/settings/dev.py
+
+# init db
+python manage.py migrate
+
+# create an admin user
+python manage.py createsuperuser
