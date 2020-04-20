@@ -5,7 +5,7 @@ db:
 		docker-compose exec db psql -U postgres
 
 start-project:
-		docker-compose run --rm app sh -c "./start-django-project.sh $$APP_NAME"
+		cp -i .env.example .env && docker-compose run --rm app sh -c "./start-django-project.sh $$APP_NAME"
 
 logs:
 		docker-compose logs -f
