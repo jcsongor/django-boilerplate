@@ -2,14 +2,19 @@
 set -e 
 
 if [ -z "${1}" ]; then
-    read -p "app name: " APP_NAME
+   echo "Usage: make start-project APP_NAME=APP_NAME"
+   exit 
 else
     APP_NAME=$1
 fi
 
-# set up app name in config files
-sed -i "s/my_app/${APP_NAME}/g" .env.example
-cp -f .env.example .env
+if [ -s ".env" ]; then
+   echo ".env has nonzero length"
+   exit 
+fi
+
+sed "s/my_app/${APP_NAME}/g" .env.example > .env
+export $(cat .env | xargs)
 
 # start new django project
 django-admin startproject ${APP_NAME}
