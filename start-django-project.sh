@@ -9,7 +9,7 @@ fi
 
 # set up app name in config files
 sed -i "s/my_app/${APP_NAME}/g" .env.example
-cp -i .env.example .env
+cp -f .env.example .env
 
 # start new django project
 django-admin startproject ${APP_NAME}
