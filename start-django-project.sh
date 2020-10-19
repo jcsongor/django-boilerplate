@@ -2,7 +2,7 @@
 set -e 
 
 if [ -z "${1}" ]; then
-   echo "Usage: make start-project APP_NAME=APP_NAME"
+   echo "Usage: make start-django-project APP_NAME=APP_NAME"
    exit 
 else
     APP_NAME=$1
@@ -37,3 +37,9 @@ python manage.py migrate
 
 # create an admin user
 python manage.py createsuperuser
+
+echo 'Django project initialized, check your setup by visiting http://localhost:8080
+If everything looks good, consider running:
+
+make eject-django-project APP_NAME='$APP_NAME'
+'

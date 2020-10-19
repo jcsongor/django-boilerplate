@@ -30,3 +30,11 @@ mv Makefile.tmp Makefile
 
 rm start-django-project.sh
 rm eject-django-project.sh
+
+echo '
+Unnecessary django boilerplate intialization code deleted.
+To commit your changes, run:
+
+git add README.md Makefile start-django-project.sh eject-django-project.sh
+git commit -m "eject django boilerplate"
+'
