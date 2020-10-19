@@ -4,9 +4,6 @@ build:
 db:
 		docker-compose exec db psql -U postgres
 
-start-project:
-		touch .env && docker-compose run --rm app sh -c "./start-django-project.sh $$APP_NAME"
-
 logs:
 		docker-compose logs -f
 
@@ -30,3 +27,10 @@ stop:
 
 test:
 		docker-compose exec app python manage.py test --pattern '*_test.py'
+
+start-django-project:
+		touch .env && docker-compose run --rm app sh -c "./start-django-project.sh $$APP_NAME"
+
+eject-django-project:
+		./eject-django-project.sh
+

@@ -7,7 +7,7 @@ To run the server locally, all you need is [docker](https://www.docker.com/) and
 
 ## Initializing a new django project
 ```bash
-make start-project APP_NAME=<your_app_name_goes_here>
+make start-django-project APP_NAME=<your_app_name_goes_here>
 ```
 
 ## Starting the service
