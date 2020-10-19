@@ -16,6 +16,11 @@ make start
 ```
 Open [http://localhost:8080/](http://localhost:8080/) in your browser to verify that your new Django project is up and running.
 
+## Getting rid of the boilerplate init code
+```bash
+make eject
+```
+
 ## Stopping the service
 ```bash
 make stop
