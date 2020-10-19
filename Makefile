@@ -32,5 +32,5 @@ start-django-project:
 		touch .env && docker-compose run --rm app sh -c "./start-django-project.sh $$APP_NAME"
 
 eject-django-project:
-		./eject-django-project.sh
+		./eject-django-project.sh $$APP_NAME
 

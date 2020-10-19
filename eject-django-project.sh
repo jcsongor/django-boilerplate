@@ -2,7 +2,7 @@
 set -e
 
 if [ -z "${1}" ]; then
-   echo "Usage: make eject APP_NAME=APP_NAME"
+   echo "Usage: make eject-django-project APP_NAME=APP_NAME"
    exit 
 else
     APP_NAME=$1
@@ -25,5 +25,8 @@ make stop
 ```
 '> README.md
 
+grep -ve 'eject-django-project\|start-django-project' Makefile>Makefile.tmp
+mv Makefile.tmp Makefile
+
 rm start-django-project.sh
-rm eject.sh
+rm eject-django-project.sh
