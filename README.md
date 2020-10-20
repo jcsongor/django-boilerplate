@@ -18,7 +18,7 @@ Open [http://localhost:8080/](http://localhost:8080/) in your browser to verify 
 
 ## Getting rid of the boilerplate init code
 ```bash
-make eject
+make eject-django-project APP_NAME=<your_app_name_goes_here>
 ```
 
 ## Stopping the service
