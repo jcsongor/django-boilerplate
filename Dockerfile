@@ -7,6 +7,7 @@ RUN apt-get update && \
 
 COPY ./requirements-dev.txt /app/requirements-dev.txt
 COPY ./requirements.txt /app/requirements.txt
+RUN pip install --upgrade pip
 RUN pip install -r /app/requirements-dev.txt
 
 RUN useradd app
