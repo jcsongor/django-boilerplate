@@ -1,6 +1,9 @@
 build:
 		docker-compose build
 
+clean:
+		docker-compose down -v --rmi all
+
 db:
 		docker-compose exec db psql -U postgres
 
